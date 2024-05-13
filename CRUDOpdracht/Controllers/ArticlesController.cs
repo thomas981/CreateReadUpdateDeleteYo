@@ -24,7 +24,7 @@ namespace CRUDOpdracht.Controllers
             // Map DTO to Domain Model
             var article = new Article
             {
-                // Id gets created automaticly
+                // Id gets created automatically
                 Sku = request.Sku,
                 Name = request.Name,
                 Price = request.Price
