@@ -98,6 +98,11 @@ namespace CRUDOpdracht.Controllers
 
             article = await articleRepository.UpdateAsync(id, article);
 
+            if (article == null)
+            {
+                return NotFound(new { Message = $"Article {id} not found" });
+            }
+
             var response = new ArticleDto
             {
                 Id = article.Id,
@@ -117,7 +122,7 @@ namespace CRUDOpdracht.Controllers
 
             if (article == null)
             {
-                return NotFound(new { Message = "Not found" });
+                return NotFound(new { Message = $"Article {id} Not found" });
             }
             return Ok();
 
